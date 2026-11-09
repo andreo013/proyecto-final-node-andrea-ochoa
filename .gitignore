@@ -1,0 +1,14 @@
+
+# Ignoro las dependencias instaladas con npm.
+node_modules/
+
+# Protejo mis variables de entorno y claves privadas.
+.env
+.env.*
+
+# Evito subir las credenciales privadas de Firebase.
+firebase-service-account.json
+*service-account*.json
+
+# Ignoro archivos temporales de registro.
+*.log
