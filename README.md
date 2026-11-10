@@ -254,7 +254,9 @@ El proyecto se encuentra publicado en Vercel, utilizando GitHub como repositorio
 
 **Consulta de productos:** https://proyecto-final-node-andrea-ochoa.vercel.app/api/products
 
-**Inicio de sesión (POST):** https://proyecto-final-node-andrea-ochoa.vercel.app/auth/login
+**Inicio de sesión (POST):** `https://proyecto-final-node-andrea-ochoa.vercel.app/auth/login`
+
+**Importante:** El inicio de sesión debe probarse desde Postman mediante una petición POST, enviando el usuario y la contraseña en el cuerpo de la solicitud (Body → raw → JSON). Si se abre la dirección directamente desde el navegador, aparecerá el mensaje «La ruta solicitada no existe», porque el navegador realiza una petición GET.
 
 Se verificó el correcto funcionamiento de la API en producción, incluyendo la conexión con Firebase Firestore, la consulta de productos y la autenticación mediante JWT.
 
