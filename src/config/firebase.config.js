@@ -1,25 +1,23 @@
-// Importo las herramientas que necesito para conectar mi proyecto con Firebase.
+
 import { initializeApp, cert } from "firebase-admin/app";
-
-// Importo la herramienta que me permite trabajar con Firestore.
 import { getFirestore } from "firebase-admin/firestore";
-
-// Importo una herramienta de Node.js para leer archivos JSON.
 import { createRequire } from "node:module";
 
-// Creo una función para poder importar mi archivo de credenciales.
 const require = createRequire(import.meta.url);
 
-// Leo el archivo JSON que contiene las credenciales privadas de Firebase.
-const serviceAccount = require("../../firebase-service-account.json");
+// Si estoy en Vercel, obtengo las credenciales desde una variable de entorno.
+// Si estoy trabajando en mi computadora, utilizo el archivo JSON local.
+const serviceAccount = process.env.FIREBASE_SERVICE_ACCOUNT
+  ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)
+  : require("../../firebase-service-account.json");
 
-// Inicializo Firebase utilizando las credenciales de mi proyecto.
+// Inicializo Firebase con las credenciales correspondientes.
 initializeApp({
   credential: cert(serviceAccount),
 });
 
-// Obtengo la conexión con la base de datos Firestore.
+// Obtengo la conexión con Firestore.
 const db = getFirestore();
 
-// Exporto la conexión para poder utilizarla en otros archivos del proyecto.
+// Exporto la conexión para utilizarla en el proyecto.
 export default db;

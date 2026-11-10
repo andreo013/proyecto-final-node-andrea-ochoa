@@ -51,7 +51,13 @@
  // Obtengo el puerto desde .env o utilizo 3000.
  const PORT = process.env.PORT || 3000;
 
- // Inicio mi servidor y muestro la dirección en la terminal.
- app.listen(PORT, () => {
-   console.log(`Servidor funcionando en http://localhost:${PORT}`);
- });
+ // Inicio el servidor solamente cuando trabajo en mi computadora.
+ // En Vercel, la plataforma se encarga de ejecutar la aplicación.
+ if (!process.env.VERCEL) {
+   app.listen(PORT, () => {
+     console.log(`Servidor funcionando en http://localhost:${PORT}`);
+   });
+ }
+
+ // Exporto la aplicación para que Vercel pueda utilizarla.
+ export default app;
