@@ -63,7 +63,7 @@ Los archivos de credenciales y las variables de entorno no se incluyen en el rep
 **1.** Clonar el repositorio:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/andreo013/proyecto-final-node-andrea-ochoa.git
 ```
 
 **2.** Ingresar a la carpeta del proyecto:
@@ -248,11 +248,17 @@ Las pruebas de creación, actualización y eliminación se realizaron con produc
 
 ## Despliegue en Vercel
 
-El proyecto está preparado para incorporar un despliegue en Vercel, utilizando GitHub como repositorio de origen.
+El proyecto se encuentra publicado en Vercel, utilizando GitHub como repositorio de origen.
 
-**URL pública:** pendiente de configurar y verificar.
+**URL pública:** https://proyecto-final-node-andrea-ochoa.vercel.app
 
-Para el entorno de producción se deberán configurar las variables de entorno y las credenciales de Firebase de manera segura, sin incorporarlas al repositorio público.
+**Consulta de productos:** https://proyecto-final-node-andrea-ochoa.vercel.app/api/products
+
+**Inicio de sesión (POST):** https://proyecto-final-node-andrea-ochoa.vercel.app/auth/login
+
+Se verificó el correcto funcionamiento de la API en producción, incluyendo la conexión con Firebase Firestore, la consulta de productos y la autenticación mediante JWT.
+
+Las variables de entorno y las credenciales privadas de Firebase se encuentran configuradas de manera segura en Vercel, sin incorporarlas al repositorio público.
 
 ## Autoría
 
